@@ -1,0 +1,45 @@
+{
+  "name": "green-monkey",
+  "tenantCode": "unregistered",
+  "codeVersion": "0.0.0-1",
+  "buildDef": [
+    "tsc"
+  ],
+  "buildIncludes": [
+    "src/app-config.json"
+  ],
+  "submodules": [],
+  "images": {
+    "green-monkey": {
+      "name": "green-monkey",
+      "targets": [
+        {
+          "environment": "default",
+          "registryUrl": "https://index.docker.io/v1"
+        }
+      ],
+      "incarnations": [],
+      "definitionFile": "Dockerfile",
+      "os": "linux",
+      "architecture": "amd64"
+    }
+  },
+  "requiredIdentities": [
+    {
+      "provider": "npm",
+      "registryUrl": "http://registry.npmjs.org/",
+      "name": "npm"
+    }
+  ],
+  "namedCalls": {
+    "build": {
+      "default": {
+        "args": {},
+        "flags": {
+          "clear": true,
+          "skip": "images"
+        }
+      }
+    }
+  }
+}
